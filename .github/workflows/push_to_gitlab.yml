@@ -34,4 +34,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git remote add gitlab https://${{ secrets.GITLAB_USER }}:${{ secrets.GITLAB_PWD }}@${{ secrets.GITLAB_URL }}
-          git push gitlab
+          git push --set-upstream gitlab --all
+          git push --set-upstream gitlab --tags
