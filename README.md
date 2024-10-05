@@ -2,6 +2,15 @@
 
 Прототип решения доступен по адресу https://odeal-admin.simplizio.com
 
+Интерактивная документация доступна по адресу https://odeal-docs.simplizio.com
+
+## Исходный код
+
+Фронтенд:
+    https://github.com/LeonidAlekseev/odeal-admin
+Бекенд:
+    https://github.com/spacesoldier/insuranceProductsPrototypeBackendNR
+
 ## Архитектура решения
 
 Решение состоит из набора компонент, каждая из которых представляет собой сервис, развёрнутый в контейнеризованном виде на виртуальной машине, работающей под управлением ОС Ubuntu 22.04.
