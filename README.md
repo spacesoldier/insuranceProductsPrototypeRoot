@@ -7,11 +7,12 @@
 ## Исходный код
 
 Фронтенд:
-    https://github.com/LeonidAlekseev/odeal-admin
-Бекенд:
-    https://github.com/spacesoldier/insuranceProductsPrototypeBackendNR
+   - https://github.com/LeonidAlekseev/odeal-admin
 
-    https://github.com/LeonidAlekseev/odeal-cms
+Бекенд:
+   - https://github.com/spacesoldier/insuranceProductsPrototypeBackendNR
+
+   - https://github.com/LeonidAlekseev/odeal-cms
     
 
 ## Архитектура решения
