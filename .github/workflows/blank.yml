@@ -4,13 +4,13 @@ on: [push, create]
 
 jobs:
   push:
-    name: Push to Gitlab
+    name: "Push to Gitlab"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-    - uses: saderi/push-to-gitlab@v1
+      - uses: saderi/push-to-gitlab@v1
         with:
-            gitlab_repository: ${{ secrets.GITLAB_URL }} # do not include https://
+            gitlab_repository: ${{ secrets.GITLAB_URL }}
             gitlab_token: ${{ secrets.GITLAB_TOKEN }}
