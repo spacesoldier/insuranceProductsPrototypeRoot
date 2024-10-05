@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  node-red:
+    image: nodered/node-red:latest
+    environment:
+      - TZ=Europe/Moscow
+    ports:
+      - "18880:1880"
+    volumes:
+      - ./node-red-data:/data
+    restart: always
+
+
+
+networks:
+  default:
+    name: hackersnet
+    external: true

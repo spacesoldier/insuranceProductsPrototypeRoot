@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  pgbouncer:
+    image: edoburu/pgbouncer:latest
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=hacker
+      - DB_PASSWORD=megahack123
+      - ADMIN_USERS=hacker
+      - AUTH_TYPE=scram-sha-256
+      - POOL_MODE=transaction
+    ports:
+      - "30698:5432"
+    restart: always
+
+networks:
+  default:
+    name: hackersnet
+    external: true

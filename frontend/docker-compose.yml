@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  odeal-admin:
+    image: leonidalekseev/odeal-admin-front:latest
+      #environment:
+      #- PORT=9090
+      #- KC_URL=keycloak_public_url
+    #- SERVICE_URL=backend_api_url
+    ports:
+      - "9090:3000"
+
+networks:
+  default:
+    name: hackersnet
+    external: true

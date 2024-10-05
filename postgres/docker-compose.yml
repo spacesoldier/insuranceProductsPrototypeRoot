@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=hacker
+      - POSTGRES_PASSWORD=pgpassword        # set actual password after downloading this file
+    ports:
+      - "65432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: changeme
+    volumes:
+      - ./pgadmin-data:/var/lib/pgadmin
+
+networks:
+  default:
+    name: hackersnet
+    external: true

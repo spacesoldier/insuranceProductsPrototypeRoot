@@ -12,6 +12,9 @@
 | npm  | Nginx Proxy Manager    |  Реверс-прокси  |
 | strcmsv4 | Strapi v4     |  Headless cms для хранения контента и метаданных  |
 | strcmsv4postgres    | PostgreSQL    |  СУБД , используемая для хранения данных CMS  |
-| odeal-admin    | Frontend    |  Приложение на базе Next.js , реализующая интерфейс пользователя  |
+| odeal-admin    | Frontend    |  Приложение на базе Next.js , реализующее интерфейс пользователя  |
+| nodered    | Node-RED    |  Приложение Node.js на базе Express.js , реализующее логику бекенда  |
+| postgres    | PostgreSQL    |  СУБД , используемая для хранения данных бекенда  |
+| pgbouncer    | PgBouncer    |  connection pooler СУБД бекенда  |
 
 

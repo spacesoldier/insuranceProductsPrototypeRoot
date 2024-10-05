@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+  strcmsv4:
+    image: leonidalekseev/odeal-cms-backend
+    container_name: strcmsv4
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}         # set values in .env file
+      DATABASE_NAME: ${DATABASE_NAME}             # set values in .env file
+      DATABASE_HOST: ${DATABASE_HOST}             # set values in .env file
+      DATABASE_PORT: ${DATABASE_PORT}             # set values in .env file
+      DATABASE_USERNAME: ${DATABASE_USERNAME}     # set values in .env file
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}     # set values in .env file
+      JWT_SECRET: ${JWT_SECRET}                   # set values in .env file
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}       # set values in .env file
+      APP_KEYS: ${APP_KEYS}                       # set values in .env file
+      NODE_ENV: ${NODE_ENV}                       # set values in .env file
+    volumes:
+      #- ./config:/opt/app/config
+      #- ./src:/opt/app/src
+      #- ./package.json:/opt/package.json
+      #- ./yarn.lock:/opt/yarn.lock
+      - ./.env:/opt/app/.env
+      - ./public/uploads:/opt/app/public/uploads
+      - ./cmsdata/migrations:/app/migrations
+    ports:
+      - "1347:1337"
+    depends_on:
+      - strcmsv4postgres
+
+  strcmsv4postgres:
+    image: postgres:16-alpine
+    restart: always
+    env_file: .env
+    environment:
+      - POSTGRES_USER=${DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    ports:
+      - "44432:5432"
+    volumes:
+      - ./cmspgdata:/var/lib/postgresql/data
+
+networks:
+  default:
+    name: hackersnet
+    external: true
