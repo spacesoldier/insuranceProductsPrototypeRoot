@@ -33,5 +33,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           git config --global user.name "github-actions[bot]"
-          git remote add gitlab https://{{ inputs.GITLAB_USER }}:${{ inputs.GITLAB_PWD }}@${{ secrets.GITLAB_URL }}
+          git remote add gitlab https://{{ secrets.GITLAB_USER }}:${{ secrets.GITLAB_PWD }}@${{ secrets.GITLAB_URL }}
           git push gitlab
