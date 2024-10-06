@@ -13,7 +13,10 @@
    - https://github.com/spacesoldier/insuranceProductsPrototypeBackendNR
 
    - https://github.com/LeonidAlekseev/odeal-cms
-    
+
+Доступ на бекенд:
+   - https://api.simplizio.com ( guest : 1q2w#E$R )
+   - https://cms.simplizio.com
 
 ## Архитектура решения
 
